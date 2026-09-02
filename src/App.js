@@ -8,7 +8,12 @@ import articles from './data/articles';
 import NotFound from './pages/NotFound';
 
 const App = () => {
-  const path = window.location.pathname.replace(/\/$/, "") || "/";
+  const basePath = (process.env.PUBLIC_URL || "").replace(/\/$/, "");
+  const pathname = window.location.pathname;
+  const routePath = basePath && (pathname === basePath || pathname.startsWith(`${basePath}/`))
+    ? pathname.slice(basePath.length)
+    : pathname;
+  const path = routePath.replace(/\/$/, "") || "/";
   if (path === "/blog") return <div className="App"><Seo blog /><Blog /></div>;
   if (path.startsWith("/blog/")) {
     const article = articles.find((item) => `/blog/${item.slug}` === path);
