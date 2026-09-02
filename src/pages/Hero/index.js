@@ -5,7 +5,7 @@ import { Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
 import Typewriter from 'typewriter-effect'
-import GlitchText from './GlitchText';
+import FuzzyText from './FuzzyText';
 
 const Hero = ({ id = "home" }) => {
   const { height } = useContext(ThemeContext);
@@ -48,7 +48,7 @@ const Hero = ({ id = "home" }) => {
               <h4>Hello, I'm</h4>
             </div>
             <h1>
-              <GlitchText speed={2} enableShadows={true} enableOnHover={false} className="custom-class">Ali Almanea</GlitchText>
+              <FuzzyText fontSize={84} fontWeight={600} fontFamily="Poppins, sans-serif" color="#fff" baseIntensity={0.27} hoverIntensity={0.58} fuzzRange={24} enableHover glitchMode glitchInterval={2200} glitchDuration={180}>Ali Almanea</FuzzyText>
             </h1>
             <Typewriter
               options={{

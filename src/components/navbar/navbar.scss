@@ -11,8 +11,14 @@
   opacity: 0;
   transition: 0.5s;
   visibility: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   @media (max-width: 500px) {
-    width: 100%;
+    width: min(88vw, 360px);
+    border-right: 1px solid #eb83f8;
+    box-shadow: 18px 0 50px rgba(0, 0, 0, .55);
+    padding: 16px 20px 30px;
+    box-sizing: border-box;
   }
   &.active {
     transform: translateX(0);
@@ -34,7 +40,7 @@
   }
   .logo {
     max-width: 120px;
-    margin: 50px auto;
+    margin: 58px auto 42px;
   }
   ul {
     padding: 0;
@@ -85,6 +91,13 @@
     }
   }
 }
+
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, .62);
+}
 .opener {
   position: fixed;
   left: 5px;
@@ -98,5 +111,26 @@
     &:hover {
       color: #eb83f8;
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .opener {
+    left: 16px;
+    top: 16px;
+  }
+
+  .opener svg {
+    font-size: 30px;
+  }
+
+  .navigation ul {
+    margin: 0;
+  }
+
+  .navigation ul li {
+    margin: 14px 0;
+    padding: 8px 0;
+    font-size: 18px;
   }
 }
