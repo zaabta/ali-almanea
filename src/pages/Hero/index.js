@@ -26,9 +26,7 @@ const Hero = ({ id = "home" }) => {
       return (
         <img
           src={value}
-          className={`animated fadeIn move-${
-            Math.floor(Math.random() * 10) % 2 === 0 ? 'up' : 'down'
-          } float-image`}
+          className="float-image"
           style={{
             left: `${index * 10}%`,
             bottom: `${Math.random() *
