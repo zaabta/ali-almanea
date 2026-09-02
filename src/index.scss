@@ -4,6 +4,9 @@ body {
   width: 100%;
   margin: 0px;
   background-color: #000;
+  h1, h2, h3, h4, h5, h6 {
+    width: fit-content;
+  }
 }
 * {
   -webkit-font-smoothing: antialiased;
