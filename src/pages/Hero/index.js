@@ -33,7 +33,7 @@ const Hero = ({ id = "home" }) => {
               (+(index % 2 === 0 ? 80 : 20) - +(index % 2 === 0 ? 70 : 10)) +
               +(index % 2 === 0 ? 70 : 10)}%`,
           }}
-          alt="shape"
+          alt=""
           key={index}
         />
       )
@@ -76,7 +76,7 @@ const Hero = ({ id = "home" }) => {
         <Col md={6} className="img">
           <img
             src={process.env.PUBLIC_URL + "/assets/hero-avatar.png"}
-            alt="person"
+            alt="Ali Almanea, Senior Full Stack Engineer"
           />
         </Col>
       </Row>

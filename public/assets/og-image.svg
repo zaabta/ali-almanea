@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="ogTitle ogDesc">
+  <title id="ogTitle">Ali Almanea | Senior Full Stack Engineer</title>
+  <desc id="ogDesc">Senior Full Stack Engineer specializing in scalable systems, cloud infrastructure, and AI-powered applications.</desc>
+  <rect width="1200" height="630" fill="#000000"/>
+  <rect x="70" y="70" width="1060" height="490" fill="#251170" stroke="#EB83F8" stroke-width="3"/>
+  <path d="M130 150H360" stroke="#EB83F8" stroke-width="6"/>
+  <text x="130" y="270" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="76" font-weight="700">Ali Almanea</text>
+  <text x="130" y="350" fill="#EB83F8" font-family="Arial, sans-serif" font-size="34" font-weight="600">Senior Full Stack Engineer</text>
+  <text x="130" y="430" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="24">React · Next.js · Django · Cloud · AI</text>
+  <path d="M1010 450L1060 400L1110 450" stroke="#8C6FF7" stroke-width="8" fill="none"/>
+</svg>
