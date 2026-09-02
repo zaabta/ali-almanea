@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ThemeProvider } from "../../context";
 import Navbar from "../navbar"
 
@@ -9,51 +9,21 @@ const Layout = ({children}) => {
     scrolllock: 0,
     width: 0
   });
-  const sections = [
-    'home',
-    'about',
-    'services',
-    'portfolio',
-    'testimonials',
-    'contact',
-  ]
-  
-  let section_id = 0
-  const scrolling = false
-
-  useEffect(() => {
-    setDefaults()
-    window.addEventListener('resize', updateDimensions)
-    return ()=> window.removeEventListener('resize', updateDimensions)
-  }, [window.innerWidth, window.height])
-
-  const updateDimensions = () => {
-    if (state.width !== window.innerWidth) {
-      window.location.reload()
-    }
-    setState({ ...state, height: window.innerHeight, width: window.innerWidth })
-    if (window.innerWidth < 1025) {
-      setState({ ...state, scrolllock: false })
-      if (window.innerWidth < 992) {
-        setState({ ...state, mobile: true })
-      }
-    } else {
-      setState({ ...state, mobile: false, scrolllock: true })
-    }
-  }
-
-  const changeSection = (id) => {
-    section_id = id
-  }
-
-  const setDefaults = () => {
-    setState({
+  const updateDimensions = useCallback(() => {
+    setState((previous) => ({
+      ...previous,
       height: window.innerWidth < 992 ? 'auto' : window.innerHeight,
-      mobile: window.innerWidth < 992 ? true : false,
+      mobile: window.innerWidth < 992,
       scrolllock: window.innerWidth < 1025 ? false : true,
       width: window.innerWidth,
-    })
-  }
+    }))
+  }, [])
+
+  useEffect(() => {
+    updateDimensions()
+    window.addEventListener('resize', updateDimensions)
+    return () => window.removeEventListener('resize', updateDimensions)
+  }, [updateDimensions])
 
   return (
     <ThemeProvider

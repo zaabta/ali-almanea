@@ -51,6 +51,7 @@
             position: relative;
             width: 40%;
             box-sizing: border-box;
+            overflow: hidden;
 
             @media (max-width:991px) {
                 width: 100%;
@@ -60,8 +61,16 @@
                 z-index: 50;
             }
 
-            h1 {
+            .content-text h1 {
+                width: 100%;
+                text-align: center;
                 margin: 0;
+            }
+
+            @media (max-width: 991px) {
+                .content-text h1 .glitch {
+                    font-size: clamp(38px, 10vw, 64px);
+                }
             }
 
             .hero-description {
@@ -131,11 +140,6 @@
             }
 
             @media (max-width:991px) {
-                .glitch {
-                    font-size: 40px;
-                    line-height: 40px;
-                    margin-bottom: 20px;
-                }
 
                 .Typewriter span {
                     font-size: 35px;
@@ -144,20 +148,9 @@
             }
 
             @media (max-width:1024px) {
-                .glitch {
-                    font-size: 40px;
-                    line-height: 40px;
-                }
 
                 .Typewriter span {
                     font-size: 20px;
-                }
-            }
-
-            @media (min-width:1025px) and (max-width: 1500px) {
-                .glitch {
-                    font-size: 70px;
-                    line-height: 70px;
                 }
             }
 
@@ -174,6 +167,23 @@
                 object-fit: cover;
                 position: absolute;
                 width: 75px;
+                animation: float-image-up-down 7s ease-in-out infinite;
+                will-change: transform;
+
+                &:nth-of-type(2n) {
+                    animation-duration: 9s;
+                    animation-delay: -2.5s;
+                }
+
+                &:nth-of-type(3n) {
+                    animation-duration: 6.5s;
+                    animation-delay: -4s;
+                }
+
+                &:nth-of-type(4n) {
+                    animation-duration: 10.5s;
+                    animation-delay: -1.5s;
+                }
 
                 @media (max-width:991px) {
                     width: 20px;
@@ -181,6 +191,23 @@
 
             }
         }
+    }
+}
+
+@keyframes float-image-up-down {
+    0%,
+    100% {
+        transform: translateY(-12px);
+    }
+
+    50% {
+        transform: translateY(18px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero .float-image {
+        animation: none;
     }
 }
 

@@ -122,6 +122,21 @@
     }
 }
 
+.project-logo {
+    display: block;
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    margin-bottom: 18px;
+}
+
+.project-role {
+    display: block;
+    color: #eb83f8;
+    font-size: 14px;
+    margin: 0 0 14px;
+}
+
 .experience-timeline {
     max-width: 1050px;
     position: relative;
@@ -276,8 +291,9 @@
 .education-entry {
     position: relative;
     display: grid;
-    grid-template-columns: 52px 1fr;
+    grid-template-columns: 52px minmax(0, 1fr);
     gap: 20px;
+    min-width: 0;
     padding: 0 0 42px;
 
     &:last-child {
@@ -300,6 +316,8 @@
     background: #251170;
     padding: 25px 30px;
     border: 1px solid rgba(235, 131, 248, .25);
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .institution-link {
@@ -433,6 +451,8 @@
     background: #251170;
     padding: 32px;
     border: 1px solid rgba(235, 131, 248, .25);
+    min-width: 0;
+    overflow-wrap: anywhere;
 
     h3 {
         font-size: 25px;
@@ -446,6 +466,55 @@
     a {
         color: #eb83f8;
     }
+}
+
+.article-card.featured {
+    grid-column: span 2;
+    background: linear-gradient(120deg, #251170, #3a1c86);
+}
+
+.article-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.article-card-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    margin: 0;
+    border: 1px solid #eb83f8;
+    color: #eb83f8 !important;
+}
+
+.article-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 18px 0;
+}
+
+.article-card-tags span {
+    border: 1px solid rgba(235, 131, 248, .45);
+    padding: 5px 8px;
+    color: #eee;
+    font-size: 11px;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+.article-card small {
+    color: #aaa;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.article-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .site-footer {
@@ -481,11 +550,16 @@
     .service-grid,
     .project-grid,
     .skills-grid,
-    .education-grid {
+    .education-grid,
+    .article-grid {
         grid-template-columns: 1fr;
     }
 
     .project-card.featured {
+        grid-column: auto;
+    }
+
+    .article-card.featured {
         grid-column: auto;
     }
 
@@ -524,7 +598,7 @@
     }
 
     .education-entry {
-        grid-template-columns: 38px 1fr;
+        grid-template-columns: 38px minmax(0, 1fr);
         gap: 12px;
     }
 
@@ -538,7 +612,30 @@
     }
 
     .education-entry-content {
-        padding: 20px;
+        padding: 18px 16px;
+
+        h3 {
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        p {
+            display: block;
+            font-size: 13px;
+        }
+    }
+
+    .article-card {
+        padding: 22px 18px;
+
+        h3 {
+            font-size: 22px;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 14px;
+        }
     }
 
     .site-footer {
@@ -564,6 +661,16 @@
 
 .company-heading>svg {
     margin-top: 5px;
+}
+
+.company-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    object-position: left center;
+    flex: 0 0 auto;
+    padding: 7px;
+    box-sizing: border-box;
 }
 
 .company-heading>div {
@@ -724,12 +831,19 @@
 
 .technology-badges span {
     display: inline-flex;
+    align-items: center;
+    gap: 6px;
     padding: 6px 9px;
     border: 1px solid rgba(235, 131, 248, .45);
     color: #fff;
     font-size: 12px;
     letter-spacing: 0;
     font-weight: 400;
+}
+
+.technology-badges svg {
+    color: #eb83f8;
+    font-size: 13px;
 }
 
 .progression-label {

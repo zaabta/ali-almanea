@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>/</loc></url>
+  <url><loc>/blog</loc></url>
+  <url><loc>/blog/grpc-vs-rest-modern-services</loc></url>
+  <url><loc>/blog/t3-stack-speed-and-tradeoffs</loc></url>
+  <url><loc>/blog/unified-core-api-architecture</loc></url>
+  <url><loc>/blog/caching-queues-api-latency</loc></url>
+  <url><loc>/blog/technical-seo-react-nextjs</loc></url>
+  <url><loc>/blog/vue-design-system-engineering</loc></url>
 </urlset>

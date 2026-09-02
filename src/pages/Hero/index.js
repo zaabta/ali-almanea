@@ -5,7 +5,7 @@ import { Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
 import Typewriter from 'typewriter-effect'
-import Glitch from '../../components/glitch';
+import GlitchText from './GlitchText';
 
 const Hero = ({ id = "home" }) => {
   const { height } = useContext(ThemeContext);
@@ -47,7 +47,9 @@ const Hero = ({ id = "home" }) => {
             <div className="line-text">
               <h4>Hello, I'm</h4>
             </div>
-            <h1><Glitch text="Ali Almanea" /></h1>
+            <h1>
+              <GlitchText speed={2} enableShadows={true} enableOnHover={false} className="custom-class">Ali Almanea</GlitchText>
+            </h1>
             <Typewriter
               options={{
                 strings: [
