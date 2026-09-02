@@ -2,16 +2,20 @@ import "./navbar.scss";
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
+import Logo from "../logo";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const pages = [
-    "Home",
-    "About",
-    "Services",
-    "Portfolio",
-    "Testimonials",
-    "Contact"
+    ["Home", "home"],
+    ["About", "about"],
+    ["Services", "services"],
+    ["Projects", "projects"],
+    ["Experience", "experience"],
+    ["Skills", "skills"],
+    ["Education", "education"],
+    ["Insights", "insights"],
+    ["Contact", "contact"],
   ];
   return (
     <>
@@ -28,14 +32,12 @@ const Navbar = () => {
           className="closeNav"
           onClick={() => setShow(false)}
         />
-        <div className="logo">
-          <img src={process.env.PUBLIC_URL + "assets/logo.png"} alt="logo" />
-        </div>
+        <div className="logo"><Logo /></div>
         <div className="links">
           <ul>
-            {pages.map((value, index) => (
-              <li key={index}>
-                <button onClick={null}>{value}</button>
+            {pages.map(([label, id]) => (
+              <li key={id}>
+                <a href={`#${id}`}>{label}</a>
               </li>
             ))}
           </ul>

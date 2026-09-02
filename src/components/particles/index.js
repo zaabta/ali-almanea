@@ -1,29 +1,24 @@
-import Particles from 'react-particles-js';
+import { useMemo } from "react";
+import ParticlesRenderer, { ParticlesProvider } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 const Particles = () => {
+  const options = useMemo(() => ({
+    particles: {
+      number: {
+        value: 50,
+        density: { enable: false, area: 5000 },
+      },
+      links: { enable: true, opacity: 0.5 },
+      size: { value: 1 },
+    },
+    detectRetina: true,
+  }), []);
+
   return (
-    <Particles
-      className="particles"
-      params={{
-        particles: {
-          number: {
-            value: 50,
-            density: {
-              enable: false,
-              value_area: 5000
-            }
-          },
-          line_linked: {
-            enable: true,
-            opacity: 0.5
-          },
-          size: {
-            value: 1
-          }
-        },
-        retina_detect: true
-      }}
-    />
+    <ParticlesProvider init={loadSlim}>
+      <ParticlesRenderer className="particles" options={options} />
+    </ParticlesProvider>
   );
 };
 

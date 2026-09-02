@@ -33,7 +33,7 @@
     }
   }
   .logo {
-    max-width: 100px;
+    max-width: 120px;
     margin: 50px auto;
   }
   ul {
@@ -46,13 +46,14 @@
       cursor: pointer;
       padding-bottom: 5px;
       position: relative;
-      button {
+      button, a {
         color: #fff;
         background-color: transparent;
         border: none;
         font-family: inherit;
         font-size: inherit;
         line-height: inherit;
+        text-decoration: none;
         &:focus {
           outline: none;
         }

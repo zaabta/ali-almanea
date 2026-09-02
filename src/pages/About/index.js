@@ -1,13 +1,19 @@
 import "./about.scss";
 import { useContext } from "react";
+import { Col, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 import ThemeContext from "../../context";
 import Particles from "../../components/particles";
 
-const About = () => {
+const About = ({ id = "about" }) => {
   const { height } = useContext(ThemeContext);
   return (
     <section
-      id={`${this.props.id}`}
+      id={id}
       className="about"
       style={{ height}}
     >
@@ -18,54 +24,28 @@ const About = () => {
             <div className="line-text">
               <h4>About Me</h4>
             </div>
-            <h3>I'm a Full Stack web developer working from home</h3>
+            <h3>Senior Full Stack Engineer building intelligent products.</h3>
             <div className="separator" />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              suscipit nisi vitae feugiat vestibulum. Aliquam porta nulla vel
-              odio scelerisque, pretium volutpat dui euismod. Integer porttitor
-              dolor placerat malesuada dictum. Fusce enim dolor, dignissim quis
-              ornare at, elementum nec turpis. Donec ac interdum libero, sed
-              condimentum lectus. Nunc nec iaculis tortor. Donec interdum
-              sollicitudin eros in pharetra. Donec ultricies laoreet dictum.
-              Maecenas vestibulum sodales justo, id hendrerit orci aliquet
-              gravida. Nulla facilisi.
+              I’m a Senior Full Stack Engineer with 4+ years of experience
+              building high-performance web platforms, scalable SaaS products,
+              and AI-driven applications.
+              <br /><br />
+              My work spans frontend architecture, backend systems, APIs,
+              databases, distributed architectures, cloud infrastructure, and
+              AI applications. I enjoy turning complex problems into reliable
+              products with clean architecture and measurable business value.
             </p>
             <div className="social social_icons">
-              <FontAwesomeIcon
-                icon={faGithub}
-                className="social_icon"
-                onClick={() => window.open("https://www.github.com")}
-              />
-              <FontAwesomeIcon
-                icon={faTwitter}
-                className="social_icon"
-                onClick={() => window.open("https://www.twitter.com")}
-              />
-              <FontAwesomeIcon
-                icon={faYoutube}
-                className="social_icon"
-                onClick={() => window.open("https://www.youtube.com")}
-              />
-              <FontAwesomeIcon
-                icon={faLinkedin}
-                className="social_icon"
-                onClick={() => window.open("https://www.linkedin.com")}
-              />
+              <a href="https://github.com/zaabta" target="_blank" rel="noopener noreferrer" aria-label="Ali Almanea on GitHub"><FontAwesomeIcon icon={faGithub} className="social_icon" /></a>
+              <a href="https://www.linkedin.com/in/ali-almanea/" target="_blank" rel="noopener noreferrer" aria-label="Ali Almanea on LinkedIn"><FontAwesomeIcon icon={faLinkedin} className="social_icon" /></a>
             </div>
           </div>
         </Col>
         <Col md={6} className="skills">
-          <div className="line-text">
-            <h4>My Skills</h4>
-          </div>
-          <div className="skills-container">
-            <Progress name="Web Design" value={90} delay={1100} />
-            <Progress name="Angular" value={50} delay={1100} />
-            <Progress name="React" value={80} delay={1100} />
-            <Progress name="Vue" value={40} delay={1100} />
-            <Progress name="MongoDB" value={100} delay={1100} />
-            <Progress name="CSS" value={50} delay={1100} />
+          <div className="line-text"><h4>Engineering Focus</h4></div>
+          <div className="focus-list">
+            <span>Frontend architecture</span><span>Backend systems</span><span>AI applications</span><span>Cloud infrastructure</span>
           </div>
         </Col>
       </Row>

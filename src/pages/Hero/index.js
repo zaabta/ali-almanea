@@ -2,10 +2,12 @@ import "./hero.scss";
 import { useContext } from "react";
 import ThemeContext from "../../context";
 import { Row, Col } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
 import Typewriter from 'typewriter-effect'
 import Glitch from '../../components/glitch';
 
-const Hero = ({ id }) => {
+const Hero = ({ id = "home" }) => {
   const { height } = useContext(ThemeContext);
   const shapes = [
     "https://retro-show-r3tr0.vercel.app/static/a7bb949e6d0d488a85cb39612f19aecb/f1913/1.png",
@@ -47,21 +49,27 @@ const Hero = ({ id }) => {
             <div className="line-text">
               <h4>Hello, I'm</h4>
             </div>
-            <Glitch text="Ali ALMANEA" />
+            <h1><Glitch text="Ali Almanea" /></h1>
             <Typewriter
               options={{
                 strings: [
-                  "UI/UX Designer",
-                  "FullStack Developer",
-                  "Mobile App Expert",
+                  "Senior Full Stack Engineer",
+                  "Scalable Systems Builder",
+                  "AI Product Engineer",
                 ],
                 autoStart: true,
                 loop: true
               }}
             />
-            <button className="hover-button">
-              <span>Download CV</span>
-            </button>
+            <p className="hero-description">
+              I build scalable web platforms, backend systems, and AI-powered
+              products from idea to production.
+            </p>
+            <div className="hero-actions">
+              <a className="hover-button" href="#projects"><span>View My Work</span></a>
+              <a className="cv-button" href={`${process.env.PUBLIC_URL}/full%20stack%20ai.pdf`} download="Ali-Almanea-CV.pdf"><FontAwesomeIcon icon={faFileArrowDown} aria-hidden="true" /> Download CV</a>
+              <a className="hero-link" href="#contact">Let’s Connect</a>
+            </div>
           </div>
           {icons()}
         </Col>

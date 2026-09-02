@@ -54,7 +54,7 @@
                 }
             }
         }
-        .skills {
+    .skills {
             display: flex;
             justify-content: center;
             flex-direction: column;
@@ -73,12 +73,25 @@
             .separator {
                 margin: 20px 0;
             }
-            .skills-container {
+        .skills-container {
                 max-width: 80%;
                 @media (max-width: 991px) {
                     max-width: 100%;
                     margin-top: 20px;
                 }
+            }
+        }
+        .focus-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+            span {
+                color: #fff;
+                border: 1px solid rgba(235, 131, 248, .55);
+                padding: 10px 14px;
+                font-size: 13px;
+                font-weight: 400;
             }
         }
     }
