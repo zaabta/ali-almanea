@@ -46,6 +46,9 @@ jobs:
           CI: false
           PUBLIC_URL: /ali-almanea
 
+      - name: Add SPA fallback for direct routes
+        run: cp build/index.html build/404.html
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
