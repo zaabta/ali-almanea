@@ -37,7 +37,7 @@ Before publishing, replace relative sitemap and social URLs with the confirmed p
 
 ## Repository
 
-The configured remote is `https://github.com/zaabta/profile-page.git` on the `main` branch.
+The configured remote is `https://github.com/zaabta/ali-almanea` on the `main` branch.
 
 ## License
 
