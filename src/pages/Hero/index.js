@@ -75,7 +75,7 @@ const Hero = ({ id = "home" }) => {
         </Col>
         <Col md={6} className="img">
           <img
-            src={process.env.PUBLIC_URL + "assets/profile.png"}
+            src={process.env.PUBLIC_URL + "/assets/hero-avatar.png"}
             alt="person"
           />
         </Col>

@@ -660,17 +660,31 @@
 }
 
 .company-heading>svg {
-    margin-top: 5px;
+    width: 58px;
+    height: 58px;
+    padding: 10px;
+    margin-top: 0;
+    box-sizing: border-box;
+    color: #eb83f8;
+    background: #251170;
+    border: 1px solid rgba(235, 131, 248, .55);
+    border-radius: 8px;
+    flex: 0 0 58px;
 }
 
 .company-logo {
-    width: 48px;
-    height: 48px;
+    width: 58px;
+    height: 58px;
     object-fit: contain;
     object-position: left center;
     flex: 0 0 auto;
-    padding: 7px;
+    padding: 2px;
     box-sizing: border-box;
+}
+
+.company-logo[src*="wozu-logo"],
+.company-logo[src*="wide-scope-logo"] {
+    width: 104px;
 }
 
 .company-heading>div {

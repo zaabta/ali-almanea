@@ -37,6 +37,12 @@
                 margin-bottom: 0;
             }
 
+            .hero-avatar {
+                width: clamp(130px, 20vw, 230px);
+                height: auto;
+                object-fit: contain;
+            }
+
             @media (max-width:991px) {
                 width: 100%;
             }
@@ -46,10 +52,11 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
+            justify-content: flex-start;
             padding: 5%;
             background-color: #251170;
             position: relative;
-            width: 40%;
+            width: 70%;
             box-sizing: border-box;
             overflow: hidden;
 
@@ -65,11 +72,22 @@
                 width: 100%;
                 text-align: center;
                 margin: 0;
+
+                canvas {
+                    display: block;
+                    max-width: 100%;
+                    margin: 0 auto;
+                }
             }
 
             @media (max-width: 991px) {
                 .content-text h1 .glitch {
                     font-size: clamp(38px, 10vw, 64px);
+                }
+
+                .content-text h1 canvas {
+                    width: min(100%, 520px) !important;
+                    height: auto !important;
                 }
             }
 

@@ -1,12 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
-  <defs>
-    <linearGradient id="eduncy-gradient" x1="92" y1="100" x2="410" y2="430" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#D94BEA"/>
-      <stop offset="1" stop-color="#F38AF5"/>
-    </linearGradient>
-  </defs>
-  <path d="M315 106C226 62 119 107 82 196C45 285 87 387 176 424" stroke="url(#eduncy-gradient)" stroke-width="22" stroke-linecap="round"/>
-  <path d="M350 151C280 92 176 101 119 172C62 243 75 348 146 405" stroke="url(#eduncy-gradient)" stroke-width="22" stroke-linecap="round"/>
-  <path d="M370 207C351 143 282 111 218 130C154 149 117 218 136 282C155 346 224 383 288 364" stroke="url(#eduncy-gradient)" stroke-width="22" stroke-linecap="round"/>
-  <path d="M273 249L397 285L338 312L316 389L273 249Z" fill="#061A38" stroke="url(#eduncy-gradient)" stroke-width="18" stroke-linejoin="round"/>
+<svg width="270" height="270" viewBox="0 0 270 270" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="eduncyTitle">
+  <title id="eduncyTitle">Eduncy</title>
+  <g stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M137 220C91 220 54 183 54 137C54 91 91 54 137 54C183 54 220 91 220 137"/>
+    <path d="M137 192C107 192 82 167 82 137C82 107 107 82 137 82C167 82 192 107 192 137"/>
+    <path d="M137 164C122 164 110 152 110 137C110 122 122 110 137 110C152 110 164 122 164 137"/>
+    <path d="M151 151L211 171C216 173 216 180 211 182L181 192L171 221C169 227 161 227 159 221L140 161C138 155 145 149 151 151Z"/>
+  </g>
 </svg>
