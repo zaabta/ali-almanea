@@ -44,7 +44,7 @@ jobs:
         run: npm run build
         env:
           CI: false
-          PUBLIC_URL: /ali-almanea
+          PUBLIC_URL: /
 
       - name: Add SPA fallback for direct routes
         run: cp build/index.html build/404.html
