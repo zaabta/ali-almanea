@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
 import Typewriter from 'typewriter-effect'
 import FuzzyText from './FuzzyText';
+import sitePath from '../../utils/sitePath';
 
 const Hero = ({ id = "home" }) => {
   const { height } = useContext(ThemeContext);
@@ -67,7 +68,7 @@ const Hero = ({ id = "home" }) => {
             </p>
             <div className="hero-actions">
               <a className="hover-button" href="#projects"><span>View My Work</span></a>
-              <a className="cv-button" href={`${process.env.PUBLIC_URL}/full%20stack%20ai.pdf`} download="Ali-Almanea-CV.pdf"><FontAwesomeIcon icon={faFileArrowDown} aria-hidden="true" /> Download CV</a>
+              <a className="cv-button" href={sitePath('/full%20stack%20ai.pdf')} download="Ali-Almanea-CV.pdf"><FontAwesomeIcon icon={faFileArrowDown} aria-hidden="true" /> Download CV</a>
               <a className="hero-link" href="#contact">Let’s Connect</a>
             </div>
           </div>
@@ -75,7 +76,7 @@ const Hero = ({ id = "home" }) => {
         </Col>
         <Col md={6} className="img">
           <img
-            src={process.env.PUBLIC_URL + "/assets/hero-avatar.png"}
+            src={sitePath('/assets/hero-avatar.png')}
             alt="Ali Almanea, Senior Full Stack Engineer"
           />
         </Col>

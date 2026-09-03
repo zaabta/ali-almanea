@@ -6,29 +6,16 @@ import Seo from './components/seo';
 import Blog, { ArticlePage } from './pages/Blog';
 import articles from './data/articles';
 import NotFound from './pages/NotFound';
+import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
-  const basePath = (process.env.PUBLIC_URL || "").replace(/\/$/, "");
-  const pathname = window.location.pathname;
-  const routePath = basePath && (pathname === basePath || pathname.startsWith(`${basePath}/`))
-    ? pathname.slice(basePath.length)
-    : pathname;
-  const path = routePath.replace(/\/$/, "") || "/";
-  if (path === "/blog") return <div className="App"><Seo blog /><Blog /></div>;
-  if (path.startsWith("/blog/")) {
-    const article = articles.find((item) => `/blog/${item.slug}` === path);
-    return article ? <div className="App"><Seo article={article} /><ArticlePage article={article} /></div> : <div className="App"><NotFound /></div>;
-  }
-  if (path !== "/") return <div className="App"><NotFound /></div>;
   return (
-    <div className="App">
-     <Seo />
-     <Layout>
-      <Hero />
-      <About/>
-      <Portfolio />
-     </Layout>
-    </div>
+    <Routes>
+      <Route path="/" element={<div className="App"><Seo /><Layout><Hero /><About/><Portfolio /></Layout></div>} />
+      <Route path="/blog" element={<div className="App"><Seo blog /><Blog /></div>} />
+      {articles.map((article) => <Route key={article.slug} path={`/blog/${article.slug}`} element={<div className="App"><Seo article={article} /><ArticlePage article={article} /></div>} />)}
+      <Route path="*" element={<div className="App"><NotFound /></div>} />
+    </Routes>
   );
 }
 

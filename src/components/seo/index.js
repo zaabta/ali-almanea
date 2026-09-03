@@ -18,9 +18,10 @@ const Seo = ({ article, blog = false }) => {
     setMeta('meta[property="og:title"]', "content", pageTitle);
     setMeta('meta[property="og:description"]', "content", pageDescription);
     setMeta('meta[property="og:type"]', "content", article ? "article" : "website");
-    setMeta('meta[property="og:url"]', "content", url);
-    setMeta('meta[property="og:image"]', "content", article ? new URL(article.openGraphImage, window.location.origin).href : new URL("/assets/og-image.svg", window.location.origin).href);
+    setMeta('meta[property="og:url"]', "content", canonical);
+    setMeta('meta[property="og:image"]', "content", article ? new URL(article.openGraphImage, window.location.origin).href : new URL("/assets/og-image.png", window.location.origin).href);
     setMeta('meta[name="twitter:card"]', "content", "summary_large_image");
+    setMeta('meta[name="twitter:image"]', "content", article ? new URL(article.openGraphImage, window.location.origin).href : new URL("/assets/og-image.png", window.location.origin).href);
 
     const schema = {
       "@context": "https://schema.org",

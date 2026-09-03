@@ -19,6 +19,7 @@
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.6",
     "react-scripts": "5.0.1",
     "sass": "^1.103.1",
     "typewriter-effect": "^2.22.0",
@@ -26,7 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
