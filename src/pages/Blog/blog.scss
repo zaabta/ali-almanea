@@ -1,6 +1,8 @@
 .blog-page { min-height: 100vh; background: #000; color: #fff; padding: 110px 8% 90px; }
 .blog-shell { max-width: 1120px; margin: 0 auto; }
 .breadcrumb { display: inline-flex; align-items: center; gap: 10px; color: #eb83f8; text-decoration: none; font-size: 13px; margin-bottom: 42px; }
+.breadcrumb a { color: #eb83f8; text-decoration: none; }
+.breadcrumb a:hover, .breadcrumb a:focus-visible { color: #fff; }
 .breadcrumb span { color: #888; }
 .blog-heading { max-width: 850px; margin-bottom: 55px; }
 .article-icon { width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid #eb83f8; color: #eb83f8; margin-bottom: 22px; }
